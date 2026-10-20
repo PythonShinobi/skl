@@ -1,0 +1,367 @@
+
+{% extends "base.html" %}
+
+{% block title %}SKL Plaza | Your Wellness, Our Priority{% endblock %}
+
+{% block content %}
+<header class="site-header">
+    <a href="#home" class="logo" aria-label="SKL Plaza home">
+        SKL<span>PLAZA</span>
+    </a>
+
+    <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav id="main-navigation" class="navigation">
+        <a href="#amenities">Amenities</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a class="button button-small" href="#contact">Enquire now</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">KAREN · GATAKA ROAD</p>
+
+            <h1>A better space<br>to live and <span>thrive.</span></h1>
+
+            <p class="hero-description">
+                Comfortable living, an energising gym and everyday
+                convenience — all in one place.
+            </p>
+
+            <div class="hero-actions">
+                <a class="button" href="#rooms">Explore our rooms</a>
+                <a class="text-link" href="#amenities">Discover wellness ↘</a>
+            </div>
+
+            <p class="hero-note">YOUR WELLNESS, OUR PRIORITY.</p>
+        </div>
+
+        <div class="hero-visual">
+            {% if "gym.jpg" in image_names %}
+                <img
+                    class="hero-image"
+                    src="{{ url_for('static', filename='images/gym.jpg') }}"
+                    alt="Gym facilities at SKL Plaza"
+                >
+            {% elif "exterior.webp" in image_names %}
+                <img
+                    class="hero-image"
+                    src="{{ url_for('static', filename='images/exterior.webp') }}"
+                    alt="SKL Plaza residential building"
+                >
+            {% else %}
+                <div class="image-placeholder">
+                    <span>YOUR NEXT CHAPTER STARTS HERE</span>
+                    <strong>SKL PLAZA</strong>                    
+                </div>
+            {% endif %}
+
+            <div class="hero-stamp">
+                <span>LIVE</span>
+                <span>WELL</span>
+                <span>EVERY DAY.</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro section">
+        <div>
+            <p class="eyebrow">MORE THAN JUST A ROOM</p>
+            <h2>Your everyday life,<br>made more convenient.</h2>
+        </div>
+        <p>
+            Find your space, keep active, unwind and enjoy practical
+            amenities in a residential setting along Gataka Road, Karen.
+        </p>
+    </section>
+
+    <section class="wellness section" id="amenities">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">YOUR WELLNESS, OUR PRIORITY</p>
+                <h2>Make room for <span>wellness.</span></h2>
+            </div>
+            <p>
+                From workouts to winding down, make the most of the
+                facilities available at SKL Plaza.
+            </p>
+        </div>
+
+        <div class="amenity-grid">
+            <article class="amenity-card amenity-featured">
+                {% if "gym2.jpg" in image_names %}
+                    <img
+                        src="{{ url_for('static', filename='images/gym2.jpg') }}"
+                        alt="Gym facilities"
+                        loading="lazy"
+                    >
+                {% else %}
+                    <div class="card-placeholder">GYM PHOTO</div>
+                {% endif %}
+                <div class="amenity-copy">
+                    <span>01 / MOVE</span>
+                    <h3>Fitness that fits your life.</h3>
+                    <p>Keep moving with the on-site gym facilities.</p>
+                </div>
+            </article>
+
+            <article class="amenity-card">
+                {% if "sauna.jpg" in image_names %}
+                    <img
+                        src="{{ url_for('static', filename='images/sauna.jpg') }}"
+                        alt="Sauna and relaxation facilities"
+                        loading="lazy"
+                    >
+                {% else %}
+                    <div class="card-placeholder">SAUNA PHOTO</div>
+                {% endif %}
+                <div class="amenity-copy">
+                    <span>02 / UNWIND</span>
+                    <h3>Time to recharge.</h3>
+                    <p>Enjoy access to the sauna facilities.</p>
+                </div>
+            </article>
+
+            <article class="amenity-card">
+                {% if "common-area.webp" in image_names %}
+                    <img
+                        src="{{ url_for('static', filename='images/common-area.webp') }}"
+                        alt="SKL Plaza rooftop"
+                        loading="lazy"
+                    >
+                {% else %}
+                    <div class="card-placeholder">ROOFTOP PHOTO</div>
+                {% endif %}
+                <div class="amenity-copy">
+                    <span>03 / BREATHE</span>
+                    <h3>Look at life from above.</h3>
+                    <p>Spend time on the rooftop.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="amenity-strip">
+            <span>Free Wi-Fi</span>
+            <span>Reliable Staff Members</span>
+            <span>On-site dining</span>
+            <span>Security cameras</span>
+            <span>Nearby shops</span>
+            <span>Convenient motorbike transport</span>
+        </div>
+    </section>
+
+    <section class="rooms section" id="rooms">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">FIND YOUR SPACE</p>
+                <h2>Room for your kind of living.</h2>
+            </div>
+            <p>
+                Looking for your own space or sharing with someone?
+                Ask us about the available room options.
+            </p>
+        </div>
+
+        <div class="room-grid">
+            <article class="room-card">
+                {% if "single-room2.webp" in image_names %}
+                    <img
+                        src="{{ url_for('static', filename='images/single-room2.webp') }}"
+                        alt="Single room at SKL Plaza"
+                        loading="lazy"
+                    >
+                {% else %}
+                    <div class="card-placeholder room-placeholder">
+                        SINGLE ROOM PHOTO
+                    </div>
+                {% endif %}
+
+                <div class="room-info">
+                    <div>
+                        <p class="eyebrow">YOUR OWN SPACE</p>
+                        <h3>Single room</h3>
+                    </div>
+                    <a
+                        class="arrow-link whatsapp-enquiry"
+                        data-room="Single room"
+                        href="#contact"
+                        aria-label="Ask about single rooms"
+                    >↗</a>
+                </div>
+                <p>Ask about availability and current rates.</p>
+            </article>
+
+            <article class="room-card">
+                {% if "shared-room2.webp" in image_names %}
+                    <img
+                        src="{{ url_for('static', filename='images/shared-room2.webp') }}"
+                        alt="Two-sharing room at SKL Plaza"
+                        loading="lazy"
+                    >
+                {% else %}
+                    <div class="card-placeholder room-placeholder">
+                        SHARED ROOM PHOTO
+                    </div>
+                {% endif %}
+
+                <div class="room-info">
+                    <div>
+                        <p class="eyebrow">SHARE YOUR SPACE</p>
+                        <h3>Two-sharing room</h3>
+                    </div>
+                    <a
+                        class="arrow-link whatsapp-enquiry"
+                        data-room="Two-sharing room"
+                        href="#contact"
+                        aria-label="Ask about two-sharing rooms"
+                    >↗</a>
+                </div>
+                <p>Ask about availability and current rates.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="gallery section" id="gallery">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">A CLOSER LOOK</p>
+                <h2>Life at SKL Plaza.</h2>
+            </div>
+            <p>
+                Explore the spaces and facilities through our photo gallery.                
+            </p>
+        </div>
+
+        {% if images %}
+            <div class="gallery-grid">
+                {% for image in images %}
+                    <a
+                        class="gallery-item"
+                        href="{{ url_for('static', filename='images/' ~ image) }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View {{ image.rsplit('.', 1)[0] | replace('-', ' ') }}"
+                    >
+                        <img
+                            src="{{ url_for('static', filename='images/' ~ image) }}"
+                            alt="{{ image.rsplit('.', 1)[0] | replace('-', ' ') | title }} at SKL Plaza"
+                            loading="lazy"
+                        >
+                        <span>
+                            {{ image.rsplit('.', 1)[0] | replace('-', ' ') | title }}
+                            ↗
+                        </span>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="gallery-empty">
+                <h3>Your photo gallery starts here.</h3>
+                <p>
+                    Add JPG, PNG or WebP photos to
+                    <code>app/static/images/</code> to display them here.
+                </p>
+            </div>
+        {% endif %}
+    </section>
+
+    
+    <section class="location section" id="location">
+        <div class="location-copy">
+            <p class="eyebrow">FIND US ON GOOGLE MAPS</p>
+            <h2>Come find your space.</h2>
+
+            <p>
+                <strong>SKL PLAZA</strong><br>
+                Gataka Road, Nairobi City, Kenya
+            </p>
+            
+            <div class="google-rating">
+                <span class="google-label">Google reviews</span>
+                <div class="rating-score">
+                    <strong>4.0</strong>
+                    <span class="rating-stars" aria-label="4 out of 5 stars">
+                        ★★★★<span class="empty-star">★</span>
+                    </span>
+                </div>
+                <p>Based on 119 Google reviews.</p>
+                <a
+                    class="text-link"
+                    href="https://www.google.com/maps/place/SKL+PLAZA/data=!4m2!3m1!1s0x0:0xd7b36a7622b3bcb5?hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Read reviews on Google ↗
+                </a>
+            </div>
+
+            <div class="location-actions">
+                <a
+                    class="button"
+                    href="https://www.google.com/maps/place/SKL+PLAZA/data=!4m2!3m1!1s0x0:0xd7b36a7622b3bcb5?hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Google listing ↗
+                </a>
+
+                <a
+                    class="text-link"
+                    href="https://www.google.com/maps/dir/?api=1&destination=SKL+PLAZA%2C+Gataka+Road%2C+Nairobi+City"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Get directions
+                </a>
+            </div>
+        </div>
+
+        <div class="location-map">
+            <iframe
+                title="Google Maps location of SKL Plaza, Gataka Road"
+                src="https://www.google.com/maps?q=SKL%20PLAZA%2C%20Gataka%20Road%2C%20Nairobi%20City&output=embed"
+                width="100%"
+                height="100%"
+                style="border: 0;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+            ></iframe>
+        </div>
+    </section>
+
+
+    <section class="contact section" id="contact">
+        <p class="eyebrow">LET'S TALK</p>
+        <h2>Your next chapter<br>could start here.</h2>
+        <p>
+            Ask about rooms, rates, availability or the facilities.
+            Our team can help you with the details.
+        </p>
+        <a class="button button-light" href="#contact" id="whatsapp-link">
+            Enquire on WhatsApp ↗
+        </a>
+        <small>WhatsApp will open with a message ready for you to send.</small>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <a href="#home" class="logo logo-light">SKL<span>PLAZA</span></a>
+    <p>Karen · Gataka Road · Kenya</p>
+    <a href="#home">Back to top ↑</a>
+</footer>
+{% endblock %}
