@@ -24,7 +24,7 @@ if (menuToggle && navigation) {
 
 // Replace this placeholder with SKL Plaza's real WhatsApp number.
 // Use the international country code and digits only.
-const WHATSAPP_NUMBER = "2547XXXXXXXX";
+const WHATSAPP_NUMBER = "254787883017";
 
 function openWhatsApp(message) {
     if (!/^254\d{9}$/.test(WHATSAPP_NUMBER)) {
