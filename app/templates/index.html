@@ -100,8 +100,9 @@
                 facilities available at SKL Plaza.
             </p>
         </div>
-
+        
         <div class="amenity-grid">
+        
             <article class="amenity-card amenity-featured">
                 {% if "gym2.jpg" in image_names %}
                     <img
@@ -112,30 +113,14 @@
                 {% else %}
                     <div class="card-placeholder">GYM PHOTO</div>
                 {% endif %}
+            
                 <div class="amenity-copy">
                     <span>01 / MOVE</span>
                     <h3>Fitness that fits your life.</h3>
                     <p>Keep moving with the on-site gym facilities.</p>
                 </div>
             </article>
-
-            <article class="amenity-card">
-                {% if "sauna.jpg" in image_names %}
-                    <img
-                        src="{{ url_for('static', filename='images/sauna.jpg') }}"
-                        alt="Sauna and relaxation facilities"
-                        loading="lazy"
-                    >
-                {% else %}
-                    <div class="card-placeholder">SAUNA PHOTO</div>
-                {% endif %}
-                <div class="amenity-copy">
-                    <span>02 / UNWIND</span>
-                    <h3>Time to recharge.</h3>
-                    <p>Enjoy access to the sauna facilities.</p>
-                </div>
-            </article>
-
+        
             <article class="amenity-card">
                 {% if "common-area.webp" in image_names %}
                     <img
@@ -146,13 +131,16 @@
                 {% else %}
                     <div class="card-placeholder">ROOFTOP PHOTO</div>
                 {% endif %}
+            
                 <div class="amenity-copy">
-                    <span>03 / BREATHE</span>
+                    <span>02 / BREATHE</span>
                     <h3>Look at life from above.</h3>
                     <p>Spend time on the rooftop.</p>
                 </div>
             </article>
+        
         </div>
+
 
         <div class="amenity-strip">
             <span>Free Wi-Fi</span>
